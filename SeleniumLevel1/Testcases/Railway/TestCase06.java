@@ -12,11 +12,14 @@ public class TestCase06 extends TestBase {
         LoginPage loginPage = new LoginPage();
         System.out.println("1. Navigate to QA Railway Website");
         homePage.open();
+
         System.out.println("2. Login with valid Email and Password");
         homePage.gotoLoginPage();
         loginPage.login(Constant.USERNAME, Constant.PASSWORD);
+
         System.out.println("3. Click on Contact tab");
         homePage.gotoContactPage();
+
         System.out.println("4. Click on Log out tab");
         homePage.gotoLogoutPage();
         String actualMsg = homePage.getHomePageMessage();

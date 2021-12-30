@@ -3,12 +3,8 @@ package Railway;
 import Constant.Constant;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
-import java.awt.*;
-import java.util.ArrayList;
 
 public class MyTicketPage extends GerneralPage{
     private final By btnCancelTicket = By.xpath("//td[text()='Nha Trang']/following-sibling::td[text()='Sài Gòn']/../td[count(//th[text()='Operation']/preceding-sibling::th)+1]/input");
@@ -19,9 +15,6 @@ public class MyTicketPage extends GerneralPage{
         JavascriptExecutor js = (JavascriptExecutor) Constant.WEBDRIVER;
         js.executeScript("window.scrollBy(0,500)");
         this.getBtnCancelTicket().click();
-
-        //  Actions actions= new Actions(Constant.WEBDRIVER);
-      //  actions.sendKeys(Keys.ENTER).build().perform();
     }
     public void AcceptCancelAlert(){
         Constant.WEBDRIVER.switchTo().alert().accept();

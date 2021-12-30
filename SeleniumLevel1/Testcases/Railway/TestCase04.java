@@ -12,8 +12,10 @@ public class TestCase04 extends TestBase {
         LoginPage loginPage = new LoginPage();
         System.out.println("1. Navigate to QA Railway Website");
         homePage.open();
+
         System.out.println("2. Click on Book ticket  tab");
         homePage.gotoBookTicketPage();
+
         System.out.println("3. Login with valid account");
         String actualMsg = loginPage.login(Constant.USERNAME, Constant.PASSWORD).getWelcomeMessage();
         String expectedMsg = "Welcome" + " " + Constant.USERNAME;

@@ -14,11 +14,14 @@ public class TestCase09 extends TestBase {
         ChangePasswordPage changePasswordPage = new ChangePasswordPage();
         System.out.println("1. Navigate to QA Railway Website");
         homePage.open();
+
         System.out.println("2. Login with a valid account ");
         homePage.gotoLoginPage();
         loginPage.login(Constant.USERNAME, Constant.PASSWORD);
+
         System.out.println("3. Click on Change Password tab");
         homePage.gotoChangePasswordPage();
+
         System.out.println("4. Enter valid information into Current Password  textbox but enter New Password and Confirm Password different");
         changePasswordPage.changepassword(Constant.PASSWORD,Utilities.generateRandomPassword(7) ,Utilities.generateRandomPassword(8));
         String actualMsg = changePasswordPage.getErrorConfirmMessage();

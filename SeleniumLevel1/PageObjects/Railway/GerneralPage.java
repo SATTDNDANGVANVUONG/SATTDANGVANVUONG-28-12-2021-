@@ -11,7 +11,7 @@ public class GerneralPage {
     private final By tabRegister = By.xpath("//span[normalize-space()='Register']");
     private final By tabChangePassWord = By.xpath("//span[normalize-space()='Change password']");
     private final By tagBookTicket = By.xpath("//span[normalize-space()='Book ticket']");
-    private final By tagContact=By.xpath("//span[normalize-space()='Contact']");
+    private final By tagContact = By.xpath("//span[normalize-space()='Contact']");
     private final By lblWelcomeMessage = By.xpath("//*[@id=\"banner\"]/div/strong");
     private final By lnlErrorMessage = By.xpath("//*[@id=\"content\"]/p");
     private final By lblHomePageMessage = By.xpath("//div[@id='content']/h1");
@@ -38,12 +38,15 @@ public class GerneralPage {
     public WebElement getTabChangePassword() {
         return Constant.WEBDRIVER.findElement(tabChangePassWord);
     }
+
     public WebElement getTabContact() {
         return Constant.WEBDRIVER.findElement(tagContact);
     }
+
     public WebElement getTabTimetable() {
         return Constant.WEBDRIVER.findElement(tabTimeTable);
     }
+
     public WebElement getTabMyticket() {
         return Constant.WEBDRIVER.findElement(tabMyTicket);
     }
@@ -61,53 +64,29 @@ public class GerneralPage {
     }
 
 
-
     //Methods
     public String getWelcomeMessage() {
         return this.getlblWelcomeMessage().getText();
     }
-
     public String getErrorMessage() {
         return this.getlblErrorMessage().getText();
     }
-
     public String getHomePageMessage() {
         return this.getlblHomePageMessage().getText();
     }
-
-    public LoginPage gotoLoginPage() {
-        this.getTabLogin().click();
-        return new LoginPage();
-    }
-
-
+    public void gotoLoginPage() {this.getTabLogin().click();}
     public void gotoBookTicketPage() {
         this.getTabBookTicket().click();
     }
-
-    public void gotoLogoutPage() {
-        this.getTabLogOut().click();
-
-    }
-    public void gotoTimetablePage() {
-        this.getTabTimetable().click();
-
-    }
-    public void gotoMyticketPage() {
-        this.getTabMyticket().click();
-
-    }
-
+    public void gotoLogoutPage() {this.getTabLogOut().click();}
+    public void gotoTimetablePage() {this.getTabTimetable().click();}
+    public void gotoMyticketPage() {this.getTabMyticket().click();}
     public void gotoResgisterPage() {
         this.getTabRegister().click();
     }
-
     public void gotoChangePasswordPage() {
         this.getTabChangePassword().click();
     }
-
-
-
     public void gotoContactPage() {
         this.getTabContact().click();
     }

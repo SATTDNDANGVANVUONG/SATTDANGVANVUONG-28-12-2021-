@@ -13,11 +13,14 @@ public class TestCase16 extends TestBase{
         LoginPage loginPage = new LoginPage();
         BookTicketPage bookTicketPage = new BookTicketPage();
         MyTicketPage myTicketPage= new MyTicketPage();
+
         System.out.println("1. Navigate to QA Railway Website");
         homePage.open();
+
         System.out.println(" 2. Login with a valid account");
         homePage.gotoLoginPage();
         loginPage.login(Constant.USERNAME, Constant.PASSWORD);
+
         System.out.println("3. Book a ticket");
         homePage.gotoBookTicketPage();
         bookTicketPage.selectDepartDate();;
@@ -25,8 +28,10 @@ public class TestCase16 extends TestBase{
         bookTicketPage.selectArriveStation(3);
         bookTicketPage.selectSeatType(2);
         bookTicketPage.selectTicketAmount("1");
+
         System.out.println("4.Click on My Ticket Tab");
         homePage.gotoMyticketPage();
+
         System.out.println("5. Click on Cancel button of ticket which user want to cancel.");
         myTicketPage.cancelTicket();
         myTicketPage.AcceptCancelAlert();

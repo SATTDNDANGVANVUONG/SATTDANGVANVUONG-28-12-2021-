@@ -15,15 +15,12 @@ public class LoginPage extends GerneralPage {
     public WebElement getTxtUsername() {
         return Constant.WEBDRIVER.findElement(txtUsername);
     }
-
     public WebElement getTxtPassword() {
         return Constant.WEBDRIVER.findElement(txtPassword);
     }
-
     public WebElement getBtnLogin() {
         return Constant.WEBDRIVER.findElement(btbLogin);
     }
-
     public WebElement getlbLoginErrorMsg() {
         return Constant.WEBDRIVER.findElement(lblLoginErrorMsg);
     }

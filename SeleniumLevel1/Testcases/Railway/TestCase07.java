@@ -14,8 +14,10 @@ public class TestCase07 extends TestBase {
         RegisterPage registerPage = new RegisterPage();
         System.out.println("1. Navigate to QA Railway Website");
         homePage.open();
+
         System.out.println("2. Click on Register tab");
         homePage.gotoResgisterPage();
+
         System.out.println("3. Enter valid information into all fields");
         System.out.println("4. Click on Register button");
         registerPage.register(

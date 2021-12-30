@@ -13,20 +13,27 @@ public class TestCase14 extends TestBase {
         BookTicketPage bookTicketPage = new BookTicketPage();
         System.out.println("1. Navigate to QA Railway Website");
         homePage.open();
+
         System.out.println(" 2. Login with a valid account");
         homePage.gotoLoginPage();
+
         loginPage.login(Constant.USERNAME, Constant.PASSWORD);
         System.out.println("3. Click on Book ticket  tab");
         homePage.gotoBookTicketPage();
+
         System.out.println("4. Select a Depart date from the list");
         bookTicketPage.selectDepartDate();
+
         System.out.println("5. Select Nha Trang for Depart from  and Sài Gòn  for Arrive at .");
         bookTicketPage.selectDepartStation("Nha Trang");
         bookTicketPage.selectArriveStation(3);
+
         System.out.println("6. Select Soft seat with air conditioner or Seat type");
         bookTicketPage.selectSeatType(2);
+
         System.out.println("7. Select 5 for Ticket amount");
         bookTicketPage.selectTicketAmount("5");
+
         String actualMsg = bookTicketPage.getBookSuccessMessage();
         String actualDepartStationInfor = bookTicketPage.getDepartStationInfor();
         String actualArriveStationInfor = bookTicketPage.getArriveStationInfor();
@@ -42,7 +49,6 @@ public class TestCase14 extends TestBase {
         Assert.assertEquals(actualArriveStationInfor, expectedArriveStationInfor);
         Assert.assertEquals(actualSeatTypeInfor, expectedSeatTypeInfor);
         Assert.assertEquals(actualTicketAmountInfor, expectedTicketAmountInfor);
-
 
     }
 }

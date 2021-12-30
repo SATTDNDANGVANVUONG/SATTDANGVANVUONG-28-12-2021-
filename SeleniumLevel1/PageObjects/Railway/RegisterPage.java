@@ -16,6 +16,7 @@ public class RegisterPage extends GerneralPage{
     private final By frmErrorPassWordMessage=By.xpath("//li[@class='password']/label[@class='validation-error']");
     private final By frmErrorPassport=By.xpath("//li[@class='pid-number']/label[@class='validation-error']");
     private final By lblWelcomeMessage=By.xpath("//div[@id='content']/p");
+
     //Elements
     public WebElement getFrmEmail(){
         return Constant.WEBDRIVER.findElement(frmEmail);
@@ -38,11 +39,12 @@ public class RegisterPage extends GerneralPage{
     public WebElement getLblRegisterMessage(){return Constant.WEBDRIVER.findElement(lblWelcomeMessage);}
     public WebElement getfrmErrorPassWordMessage(){return Constant.WEBDRIVER.findElement(frmErrorPassWordMessage);}
     public WebElement getfrmErrorPassportMessage(){return Constant.WEBDRIVER.findElement(frmErrorPassport);}
+
+
     //Methods
     public String getRegisterMessage() {
         return this.getLblRegisterMessage().getText();
     }
-  ;
     public String getErrorEmailMessage() {
         return this.getfrmErrorEmailMessage().getText();
     }
@@ -52,7 +54,6 @@ public class RegisterPage extends GerneralPage{
     public String getErrorPassportMessage() {
         return this.getfrmErrorPassportMessage().getText();
     }
-    ;
     public String getErrorConfirmMessage() {
         return this.getlblErrorMessage().getText();
     }
@@ -62,12 +63,6 @@ public class RegisterPage extends GerneralPage{
         this.getFrmConfirmPassWord().sendKeys(confirmpassword);
         this.getFrmPassPort().sendKeys(passport);
         this.getBtnRegister().submit();
-
-
     }
-
-
-
-
 
 }

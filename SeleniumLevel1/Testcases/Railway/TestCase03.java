@@ -13,8 +13,10 @@ public class TestCase03 extends TestBase {
         LoginPage loginPage= new LoginPage();
         System.out.println("1. Navigate to QA Railway Website");
         homePage.open();
+
         System.out.println("2. Click on Login tab");
         homePage.gotoLoginPage();
+
         System.out.println("3. Enter valid Email and invalid Password");
         System.out.println("4. Click on Login  button");
         String actualMsg=loginPage.login(Constant.USERNAME,Utilities.generateRandomPassword(9)).getErrorMessage();
