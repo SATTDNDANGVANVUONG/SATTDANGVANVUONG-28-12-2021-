@@ -19,6 +19,7 @@ public class TestCase01 extends TestBase {
 
         System.out.println("3. Enter valid Email and Password");
         System.out.println("4. Click on Login button");
+
         String actualMsg=loginPage.login(Constant.USERNAME,Constant.PASSWORD).getWelcomeMessage();
         String expectedMsg="Welcome"+" "+Constant.USERNAME;
         Assert.assertEquals(actualMsg ,expectedMsg, "Welcome message is not displayed as expexed");

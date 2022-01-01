@@ -17,6 +17,7 @@ public class TestCase04 extends TestBase {
         homePage.gotoBookTicketPage();
 
         System.out.println("3. Login with valid account");
+
         String actualMsg = loginPage.login(Constant.USERNAME, Constant.PASSWORD).getWelcomeMessage();
         String expectedMsg = "Welcome" + " " + Constant.USERNAME;
         Assert.assertEquals(actualMsg, expectedMsg, "User is not redirected to Book ticket page after logging in");

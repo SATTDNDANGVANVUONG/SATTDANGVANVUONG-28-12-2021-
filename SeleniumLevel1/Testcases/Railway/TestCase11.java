@@ -20,6 +20,7 @@ public class TestCase11 extends TestBase {
         System.out.println("3. Enter valid email address and leave other fields empty");
         System.out.println("4. Click on Register button");
         registerPage.register(Utilities.generateRandomEmail(), Constant.EMPTY,Constant.EMPTY,Constant.EMPTY);
+
         String actualFormMsg=registerPage.getErrorEmailMessage();
         String actualErrorPasswordMsg=registerPage.getErrorPassWordMessage();
         String actualErrorPassportMsg=registerPage.getErrorPassportMessage();

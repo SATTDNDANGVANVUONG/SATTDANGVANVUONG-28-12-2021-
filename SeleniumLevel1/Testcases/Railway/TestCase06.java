@@ -22,6 +22,7 @@ public class TestCase06 extends TestBase {
 
         System.out.println("4. Click on Log out tab");
         homePage.gotoLogoutPage();
+
         String actualMsg = homePage.getHomePageMessage();
         String expectedMsg = "Welcome to Safe Railway";
         Assert.assertEquals(actualMsg, expectedMsg, "User is not redirected to Home page after logging out");

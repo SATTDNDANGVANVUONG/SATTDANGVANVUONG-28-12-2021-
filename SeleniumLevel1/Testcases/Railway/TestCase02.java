@@ -18,6 +18,7 @@ public class TestCase02 extends TestBase {
 
         System.out.println("3. User doesn't type any words into Username  textbox but enter valid information into Password textbox");
         System.out.println("4. Click on Login  button");
+
         String actualMsg = loginPage.login("", Constant.PASSWORD).getErrorMessage();
         String expectedMsg = "There was a problem with your login and/or errors exist in your form.";
         Assert.assertEquals(actualMsg, expectedMsg, "User can log in with blank Username");

@@ -2,8 +2,13 @@ package Railway;
 
 import Constant.Constant;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class BookTicketPage extends GerneralPage {
 
@@ -72,12 +77,15 @@ public class BookTicketPage extends GerneralPage {
     private Select getDropDownSeatType() {
         Select select = new Select(this.getDdlSeatType());
         return select;}
-    public void selectArriveStation(int t) {this.getDropDownArriveAt().selectByIndex(t);}
-    public void selectDepartDate() {this.getDropDownDepartDate().getFirstSelectedOption();}
-    public void selectDepartStation(String departstation) {this.getDropDownDepartFrom().selectByVisibleText(departstation);}
-    public void selectSeatType(int t ) {
-        this.getDropDownSeatType().selectByIndex(t);
-    }
-    public void selectTicketAmount(String amount) {this.getDropDownTicketAmount().selectByValue(amount);this.getDdlDepartFrom().submit();}
+    public void BookTicket(String date, String departStation , String arriveStation , String seatType , String amount ) {
+        this.getDropDownDepartDate().selectByVisibleText(date);
+        this.getDropDownDepartFrom().selectByVisibleText(departStation);
+        WebDriverWait w = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(5));
+        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//select[@name='ArriveStation']//option[@value='1'][normalize-space()='Sài Gòn']")));
+        this.getDropDownArriveAt().selectByVisibleText(arriveStation);
+        w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//option[normalize-space()='Soft seat with air conditioner']")));
+        this.getDropDownSeatType().selectByVisibleText(seatType);
+        this.getDropDownTicketAmount().selectByValue(amount);this.getDdlDepartFrom().submit();
 
+}
 }

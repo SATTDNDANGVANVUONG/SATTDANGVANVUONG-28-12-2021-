@@ -24,6 +24,7 @@ public class TestCase09 extends TestBase {
 
         System.out.println("4. Enter valid information into Current Password  textbox but enter New Password and Confirm Password different");
         changePasswordPage.changepassword(Constant.PASSWORD,Utilities.generateRandomPassword(7) ,Utilities.generateRandomPassword(8));
+
         String actualMsg = changePasswordPage.getErrorConfirmMessage();
         String expectedMsg = "The password confirmation does not match the new password.";
         Assert.assertEquals(actualMsg, expectedMsg, "User can't change password when New Password and  Confirm Password  are different.");

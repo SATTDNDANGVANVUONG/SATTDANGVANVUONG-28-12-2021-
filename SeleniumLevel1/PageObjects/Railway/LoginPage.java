@@ -33,9 +33,9 @@ public class LoginPage extends GerneralPage {
         return new HomePage();
     }
 
-    public void loginMultipleTime(int n) {
-        for (int i = 0; i < n; i++) {
-            this.login(Constant.USERNAME, "sairoidomay");
+    public void loginMultipleTime(int times, String username, String password) {
+        for (int i = 0; i < times; i++) {
+            this.login(username,password);
         }
 
 

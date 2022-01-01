@@ -1,5 +1,6 @@
 package Constant;
-
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
 import java.util.Random;
 
 public class Utilities {
@@ -28,7 +29,10 @@ public class Utilities {
     }
 
     public static String generateRandomEmail() {
-        String randomEmail = generateRandomPassword(7) + "@gmail.com";
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        String timenow= dtf.format(now);
+        String randomEmail = timenow + "@gmail.com";
         return randomEmail;
     }
 

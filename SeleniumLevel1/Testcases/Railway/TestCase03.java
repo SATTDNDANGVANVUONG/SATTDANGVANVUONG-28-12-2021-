@@ -19,6 +19,7 @@ public class TestCase03 extends TestBase {
 
         System.out.println("3. Enter valid Email and invalid Password");
         System.out.println("4. Click on Login  button");
+
         String actualMsg=loginPage.login(Constant.USERNAME,Utilities.generateRandomPassword(9)).getErrorMessage();
         String expectedMsg="Invalid username or password. Please try again.";
         Assert.assertEquals(actualMsg ,expectedMsg, "User can log in with invalid password");

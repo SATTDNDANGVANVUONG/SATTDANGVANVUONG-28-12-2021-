@@ -21,6 +21,7 @@ public class TestCase10 extends TestBase {
         System.out.println("3. Enter information of the created account in Pre-condition");
         System.out.println("4. Click on Register button");
         registerPage.register(Constant.InuseEmail,Constant.PASSWORD,Constant.PASSWORD,Utilities.generateRandomPasspost(9));
+
         String actualMsg=registerPage.getErrorEmailMessage();
         String expectedMsg="This email address is already in use.";
         Assert.assertEquals(actualMsg ,expectedMsg, "User can crete account with an already in-use email");

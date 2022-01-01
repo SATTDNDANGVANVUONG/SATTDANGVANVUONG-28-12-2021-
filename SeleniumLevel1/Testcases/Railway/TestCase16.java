@@ -23,18 +23,14 @@ public class TestCase16 extends TestBase{
 
         System.out.println("3. Book a ticket");
         homePage.gotoBookTicketPage();
-        bookTicketPage.selectDepartDate();;
-        bookTicketPage.selectDepartStation("Nha Trang");
-        bookTicketPage.selectArriveStation(3);
-        bookTicketPage.selectSeatType(2);
-        bookTicketPage.selectTicketAmount("1");
-
+        bookTicketPage.BookTicket("1/10/2022","Nha Trang","Sài Gòn","Soft seat with air conditioner","1");
         System.out.println("4.Click on My Ticket Tab");
         homePage.gotoMyticketPage();
 
         System.out.println("5. Click on Cancel button of ticket which user want to cancel.");
         myTicketPage.cancelTicket();
         myTicketPage.AcceptCancelAlert();
+
         Assert.assertFalse(myTicketPage.isCancelTicketPresent());
 
 
