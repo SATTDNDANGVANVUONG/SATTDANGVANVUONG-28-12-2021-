@@ -23,6 +23,8 @@ public class BookTicketPage extends GerneralPage {
     private final By dglArriveStation = By.xpath("//table[@class='MyTable WideTable']/tbody/tr/td[count(//th[normalize-space()='Arrive Station'])+1]");
     private  final By dglSeatType= By.xpath("//table[@class='MyTable WideTable']/tbody/tr/td[count(//th[normalize-space()='Seat Type'])+2]");
     private final By dglTicketAmount=By.xpath("//table[@class='MyTable WideTable']/tbody/tr/td[count(//th[normalize-space()='Amount'])+6]");
+    private final By frmErrorMessage=By.xpath("//p[@class='message error']");
+    private final By frmErrorAmountMessage=By.xpath("//label[contains(text(),'You have booked 10 tickets. You can book no more.')]");
 
     //Elements
     public WebElement getDdlDepartDate() {
@@ -47,6 +49,8 @@ public class BookTicketPage extends GerneralPage {
     public WebElement getDglArriveStationBookedTicket(){return Constant.WEBDRIVER.findElement(dglArriveStation);}
     public WebElement getDglSeatTypeBookedTicket(){return Constant.WEBDRIVER.findElement( dglSeatType);}
     public WebElement getDglTicketAmountBookedTicket(){return Constant.WEBDRIVER.findElement( dglTicketAmount);}
+    public WebElement getFrmErrorMessage(){return Constant.WEBDRIVER.findElement( frmErrorMessage);}
+    public WebElement getFrmErrorAmountMessage(){return Constant.WEBDRIVER.findElement( frmErrorAmountMessage);}
     //Methods
     public String getBookSuccessMessage() {return this.getDdlBookSucessMessage().getText();}
     public String getDepartStationInfor() {
@@ -59,6 +63,8 @@ public class BookTicketPage extends GerneralPage {
         return this.getDglSeatTypeBookedTicket().getText();
     }
     public String getTicketAmountInfor() {return this.getDglTicketAmountBookedTicket().getText();}
+    public String getFormErrorMessage() {return this.getFrmErrorMessage().getText();}
+    public String getTicketAmountErrorMessage() {return this.getFrmErrorAmountMessage().getText();}
     private Select getDropDownDepartDate() {
         Select select = new Select(this.getDdlDepartDate());
         return select;}

@@ -1,10 +1,11 @@
 <suite name="Railway">
-    <parameter name="URl" value="thucsukhoday"/>
     <test name="login">
         <classes>
             <class name="Railway.TestCase01"/>
             <class name="Railway.TestCase02"/>
             <class name="Railway.TestCase03"/>
+            <class name="Railway.TestCase04"/>
+            <class name="Railway.TestCase05"/>
         </classes>
 
     </test>
@@ -13,6 +14,7 @@
             <class name="Railway.TestCase14"/>
             <class name="Railway.TestCase15"/>
             <class name="Railway.TestCase16"/>
+            <class name="Railway.TestCase17"/>
         </classes>
 
     </test>
