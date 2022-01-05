@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Parallel Testing Suite" >
+    <test name="Parallel Tests" parallel="classes" thread-count="2">
+        <classes>
+            <class name="Railway.TestCase01"/>
+            <class name="Railway.TestCase02"/>
+        </classes>
+    </test>
+</suite>

@@ -2,7 +2,6 @@ package Railway;
 
 import Constant.Constant;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -83,8 +82,8 @@ public class BookTicketPage extends GerneralPage {
     private Select getDropDownSeatType() {
         Select select = new Select(this.getDdlSeatType());
         return select;}
-    public void BookTicket(String date, String departStation , String arriveStation , String seatType , String amount ) {
-        this.getDropDownDepartDate().selectByVisibleText(date);
+    public void BookTicket( String departStation , String arriveStation , String seatType , String amount ) {
+        this.getDropDownDepartDate().getFirstSelectedOption();
         this.getDropDownDepartFrom().selectByVisibleText(departStation);
         WebDriverWait w = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(5));
         w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//select[@name='ArriveStation']//option[@value='1'][normalize-space()='Sài Gòn']")));

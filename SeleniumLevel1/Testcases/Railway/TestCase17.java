@@ -4,32 +4,31 @@ import Constant.Constant;
 import Constant.DataUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import java.util.HashMap;
+import  Constant.NewAccount;
+import Constant.Utilities;
 
 public class TestCase17 extends TestBase{
     @Test(dataProviderClass = DataUtils.class,dataProvider = "dataProvider2")
-    public void TC17(HashMap<String,String> hashMap)  {
+    public void TC17( String depart , String arrive, String seatType,String amount1,String amount2)  {
         System.out.println("TC17- User can't book more than 10 tickets");
         HomePage homePage = new HomePage();
-        LoginPage loginPage = new LoginPage();
         BookTicketPage bookTicketPage = new BookTicketPage();
+        NewAccount  newAccount= new NewAccount();
         System.out.println("1. Navigate to QA Railway Website");
         homePage.open();
 
-        System.out.println(" 2. Login with a valid account");
-        homePage.gotoLoginPage();
-
-        loginPage.login(Constant.USERNAME, Constant.PASSWORD);
+        System.out.println(" 2. Login with a valid account(new account)");
+        homePage.gotoResgisterPage();
+        newAccount.LoginWithNewAccount(Utilities.generateRandomEmail(),Constant.PASSWORD,Constant.PASSWORD, Utilities.generateRandomPasspost(8));
         System.out.println("3. Click on Book ticket  tab");
         homePage.gotoBookTicketPage();
 
         System.out.println("4. Book 10 tickets");
-        bookTicketPage.BookTicket(hashMap.get("date"),hashMap.get("departStation"),hashMap.get("arriveStation"),hashMap.get("seatType"),hashMap.get("amount"));
+        bookTicketPage.BookTicket( depart, arrive, seatType, amount1);
         System.out.println("5. Click on the Book ticket again");
         homePage.gotoBookTicketPage();
         System.out.println("6. Book one more ticket");
-        bookTicketPage.BookTicket(hashMap.get("date"),hashMap.get("departStation"),hashMap.get("arriveStation"),hashMap.get("seatType"),"1");
+        bookTicketPage.BookTicket( depart, arrive, seatType, amount2);
 
         String actualErrorMsg = bookTicketPage.getFormErrorMessage();
         String actualTicketAmountErrorMsg = bookTicketPage.getTicketAmountErrorMessage();

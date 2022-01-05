@@ -1,69 +1,64 @@
 package Constant;
 
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+import com.google.gson.JsonObject;
 import org.testng.annotations.DataProvider;
 
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Set;
-import Constant.Utilities;
 public class DataUtils {
 
-    @DataProvider
-    public Object[] dataProvider1() {
-        JSONParser parser = new JSONParser();
-        JSONObject jsonObject = null;
 
-        // Read JSON file
-        try {
-            Object obj = parser.parse(new FileReader(Utilities.getProjectPath()+"/DataObjects/data.json"));
-            jsonObject = (JSONObject) obj;
-        } catch (IOException | ParseException exception) {
-            exception.printStackTrace();
-        }
 
-        // Array to store JSON data
-        Object[] data = new Object[1];
+    @DataProvider(name = "dataProvider")
+    public Object[][] dataProvider() {
+        String filePath = Utilities.getProjectPath() + "/DataObjects/data.json";
+        JsonObject jsonObject = JsonHelper.getJsonObject(filePath);
+         JsonObject dataTC14 = jsonObject.getAsJsonObject("TC14");
+        String departStation1 = dataTC14.get("departStation").getAsString();
+        String arriveStation1 = dataTC14.get("arriveStation").getAsString();
+        String seatType1 = dataTC14.get("seatType").getAsString();
+        String amount1 = dataTC14.get("amount").getAsString();
 
-        // Store JSON data as key/value pairs in a hashMap
-        HashMap<String, String> hashMap = new LinkedHashMap<>();
-        Set<String> jsonObjKeys = jsonObject.keySet();
-        for (String jsonObjKey : jsonObjKeys) {
-            hashMap.put(jsonObjKey, (String) jsonObject.get(jsonObjKey));
-        }
-        // Store HashMap in an array and return array
-        data[0] = hashMap;
-        return data;
+
+        Object[][] object = new Object[][]{
+                {departStation1, arriveStation1,seatType1,amount1 }
+        };
+
+        return object;
     }
-    @DataProvider
-    public Object[] dataProvider2() {
-        JSONParser parser = new JSONParser();
-        JSONObject jsonObject = null;
+    @DataProvider(name = "dataProvider1")
+    public Object[][] dataProvider1() {
+        String filePath = Utilities.getProjectPath() + "/DataObjects/data.json";
+        JsonObject jsonObject = JsonHelper.getJsonObject(filePath);
+        JsonObject dataTC16 = jsonObject.getAsJsonObject("TC16");
+        String departStation1 = dataTC16.get("departStation").getAsString();
+        String arriveStation1 = dataTC16.get("arriveStation").getAsString();
+        String seatType1 = dataTC16.get("seatType").getAsString();
+        String amount1 = dataTC16.get("amount").getAsString();
 
-        // Read JSON file
-        try {
-            Object obj = parser.parse(new FileReader(Utilities.getProjectPath()+"/DataObjects/data1.json"));
-            jsonObject = (JSONObject) obj;
-        } catch (IOException | ParseException exception) {
-            exception.printStackTrace();
-        }
 
-        // Array to store JSON data
-        Object[] data = new Object[1];
+        Object[][] object1 = new Object[][]{
+                {departStation1, arriveStation1,seatType1,amount1 }
+        };
 
-        // Store JSON data as key/value pairs in a hashMap
-        HashMap<String, String> hashMap = new LinkedHashMap<>();
-        Set<String> jsonObjKeys = jsonObject.keySet();
-        for (String jsonObjKey : jsonObjKeys) {
-            hashMap.put(jsonObjKey, (String) jsonObject.get(jsonObjKey));
-        }
-        // Store HashMap in an array and return array
-        data[0] = hashMap;
-        return data;
+        return object1;
+    }
+    @DataProvider(name = "dataProvider2")
+    public Object[][] dataProvider2() {
+        String filePath = Utilities.getProjectPath() + "/DataObjects/data.json";
+        JsonObject jsonObject = JsonHelper.getJsonObject(filePath);
+        JsonObject dataTC17 = jsonObject.getAsJsonObject("TC17");
+        String departStation1 = dataTC17.get("departStation").getAsString();
+        String arriveStation1 = dataTC17.get("arriveStation").getAsString();
+        String seatType1 = dataTC17.get("seatType").getAsString();
+        String amount1 = dataTC17.get("amount1").getAsString();
+        String amount2 = dataTC17.get("amount2").getAsString();
+
+
+
+        Object[][] object2 = new Object[][]{
+                {departStation1, arriveStation1,seatType1,amount1,amount2 }
+        };
+
+        return object2;
     }
 
 

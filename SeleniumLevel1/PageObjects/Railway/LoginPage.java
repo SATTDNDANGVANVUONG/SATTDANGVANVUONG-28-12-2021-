@@ -2,6 +2,7 @@ package Railway;
 
 import Constant.Constant;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 public class LoginPage extends GerneralPage {
@@ -27,6 +28,8 @@ public class LoginPage extends GerneralPage {
 
     //Methods
     public HomePage login(String username, String password) {
+        JavascriptExecutor js = (JavascriptExecutor) Constant.WEBDRIVER;
+        js.executeScript("window.scrollBy(0,500)");
         this.getTxtUsername().sendKeys(username);
         this.getTxtPassword().sendKeys(password);
         this.getBtnLogin().click();

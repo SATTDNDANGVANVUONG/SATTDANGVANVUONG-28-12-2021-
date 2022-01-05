@@ -65,6 +65,7 @@ public class GerneralPage {
 
 
     //Methods
+
     public String getWelcomeMessage() {
         return this.getlblWelcomeMessage().getText();
     }

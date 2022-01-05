@@ -24,7 +24,7 @@ public class TestCase07 extends TestBase {
                 Utilities.generateRandomEmail(), Constant.PASSWORD, Constant.PASSWORD, Utilities.generateRandomPasspost(9));
 
         String actualMsg = registerPage.getRegisterMessage();
-        String expectedMsg = "Registration Confirmed! You can now log in to the site.";
+        String expectedMsg = "You're here";
         Assert.assertEquals(actualMsg, expectedMsg, "User can not create new account ");
     }
 }
