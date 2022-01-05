@@ -3,13 +3,6 @@
 <suite name="Failed suite [Default Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="SeleniumLevel1(failed)">
     <classes>
-      <class name="Railway.TestCase15">
-        <methods>
-          <include name="beforeMethod"/>
-          <include name="TC15"/>
-          <include name="afterMethod"/>
-        </methods>
-      </class> <!-- Railway.TestCase15 -->
       <class name="Railway.TestCase05">
         <methods>
           <include name="beforeMethod"/>
@@ -17,6 +10,13 @@
           <include name="afterMethod"/>
         </methods>
       </class> <!-- Railway.TestCase05 -->
+      <class name="Railway.TestCase15">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="TC15"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- Railway.TestCase15 -->
     </classes>
   </test> <!-- SeleniumLevel1(failed) -->
 </suite> <!-- Failed suite [Default Suite] -->
